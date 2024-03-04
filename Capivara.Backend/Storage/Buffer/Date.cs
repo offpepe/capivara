@@ -1,4 +1,4 @@
-﻿namespace Rinha2024.VirtualDb.buffer;
+﻿namespace Rinha2024.VirtualDb.Storage.Buffer;
 
 public static class Date
 {

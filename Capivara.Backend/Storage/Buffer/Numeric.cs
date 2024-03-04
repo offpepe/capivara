@@ -1,5 +1,5 @@
 ﻿
-namespace Rinha2024.VirtualDb.buffer;
+namespace Rinha2024.VirtualDb.Storage.Buffer;
 
 public static class Numeric
 {
@@ -160,7 +160,7 @@ public static class Numeric
     {
         var bits = decimal.GetBits(value);
         var byteArray = new byte[bits.Length * sizeof(int)];
-        Buffer.BlockCopy(bits, 0, byteArray, 0, byteArray.Length);
+        System.Buffer.BlockCopy(bits, 0, byteArray, 0, byteArray.Length);
         return byteArray;
     }
 
