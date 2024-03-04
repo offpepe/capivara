@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-
+﻿
 namespace Rinha2024.VirtualDb.buffer;
 
 public static class Numeric
@@ -17,6 +15,19 @@ public static class Numeric
         return result;
     }
     
+    public static long ReadLong(this byte[] buffer)
+    {
+        return BitConverter.ToInt64(buffer);
+    }
+    
+    public static long ReadLong(this byte[] buffer, ref int position)
+    {
+        var result = BitConverter.ToInt64(buffer, position);
+        position += sizeof(long);
+        return result;
+    }
+
+    
     public static double ReadDouble(this byte[] buffer)
     {
         return BitConverter.ToDouble(buffer);
@@ -28,8 +39,25 @@ public static class Numeric
         position += sizeof(double);
         return result;
     }
-
-
+    
+    public static float ReadFloat(this byte[] buffer)
+    {
+        return BitConverter.ToSingle(buffer);
+    }
+    
+    public static float ReadFloat(this byte[] buffer, ref int position)
+    {
+        var result = BitConverter.ToSingle(buffer, position);
+        position += sizeof(float);
+        return result;
+    }
+    
+    public static decimal ReadDecimal(this byte[] buffer, ref int position)
+    {
+        var result = (decimal) BitConverter.ToSingle(buffer, position); 
+        position += sizeof(float);
+        return result;
+    }
     
     public static void WriteNumeric(this byte[] buffer, int value)
     {
@@ -135,4 +163,5 @@ public static class Numeric
         Buffer.BlockCopy(bits, 0, byteArray, 0, byteArray.Length);
         return byteArray;
     }
+
 }
