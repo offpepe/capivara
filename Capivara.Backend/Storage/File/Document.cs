@@ -1,15 +1,14 @@
-﻿using System.Threading.Tasks.Dataflow;
-using Rinha2024.VirtualDb.Models;
-using Rinha2024.VirtualDb.Storage.Buffer;
-using Rinha2024.VirtualDb.Storage.Utils;
-using Rinha2024.VirtualDb.Types;
+﻿using Capivara.Backend.Models;
+using Capivara.Backend.Storage.Buffer;
+using Capivara.Backend.Storage.Utils;
+using Capivara.Backend.Types;
 using Fs = System.IO.File;
 
-namespace Rinha2024.VirtualDb.Storage.File;
+namespace Capivara.Backend.Storage.File;
 
 public class DocumentFs
 {
-    public void CreateMetadataFile(Document document, string schema, string docName)
+    public static void CreateMetadataFile(Document document, string schema, string docName)
     {
         var properties = document.Properties;
         var metadata = new byte[document.MetadataSize];
@@ -29,7 +28,7 @@ public class DocumentFs
         stream.Write(metadata);
     }
 
-    public void CreateDocumentFile(Document document, string schema, string docName)
+    public static void CreateDocumentFile(Document document, string schema, string docName)
     {
         var buffer = new byte[document.DocumentSize];
         var position = 0;

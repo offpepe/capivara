@@ -3,7 +3,7 @@
 // ReSharper disable ForCanBeConvertedToForeach 
 // not using stateMachine
 
-namespace Rinha2024.VirtualDb.Storage.Buffer;
+namespace Capivara.Backend.Storage.Buffer;
 
 public static class Text
 {

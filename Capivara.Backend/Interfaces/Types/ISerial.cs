@@ -1,4 +1,4 @@
-﻿namespace Rinha2024.VirtualDb.Interfaces.Types;
+﻿namespace Capivara.Backend.Interfaces.Types;
 
 public interface ISerial
 {

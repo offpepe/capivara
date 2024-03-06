@@ -1,9 +1,9 @@
 ﻿using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using Rinha2024.VirtualDb.Extensions;
+using Capivara.Backend.Extensions;
 
-namespace Rinha2024.VirtualDb;
+namespace Capivara.Backend;
 
 [SuppressMessage("ReSharper", "FunctionNeverReturns")]
 public class Client

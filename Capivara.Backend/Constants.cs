@@ -1,4 +1,4 @@
-﻿namespace Rinha2024.VirtualDb;
+﻿namespace Capivara.Backend;
 
 public class Constants
 {

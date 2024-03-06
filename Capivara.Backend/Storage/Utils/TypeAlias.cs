@@ -1,4 +1,4 @@
-﻿namespace Rinha2024.VirtualDb.Storage.Utils;
+﻿namespace Capivara.Backend.Storage.Utils;
 /// <summary>
 /// into this enum are the byte alias for all supported types
 /// </summary>

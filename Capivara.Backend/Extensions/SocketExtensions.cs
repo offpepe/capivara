@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 
-namespace Rinha2024.VirtualDb.Extensions;
+namespace Capivara.Backend.Extensions;
 
 public static class SocketExtensions
 {

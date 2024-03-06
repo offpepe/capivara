@@ -1,4 +1,4 @@
-﻿namespace Rinha2024.VirtualDb.Extensions;
+﻿namespace Capivara.Backend.Extensions;
 
 public static class ArrayExtension
 {

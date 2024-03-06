@@ -1,7 +1,5 @@
 ﻿
-using System.Reflection;
-
-namespace Rinha2024.VirtualDb.Storage.Utils;
+namespace Capivara.Backend.Storage.Utils;
 public static class TypeUtility
 {
     

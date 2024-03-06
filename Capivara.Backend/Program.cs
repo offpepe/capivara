@@ -1,11 +1,9 @@
 using System.Collections.Concurrent;
-using System.Globalization;
 using System.Net.Sockets;
-using System.Text;
-using Rinha2024.VirtualDb.Extensions;
-using Rinha2024.VirtualDb.IO;
+using Capivara.Backend.Extensions;
+using Capivara.Backend.IO;
 
-namespace Rinha2024.VirtualDb;
+namespace Capivara.Backend;
 
 public class Program
 {

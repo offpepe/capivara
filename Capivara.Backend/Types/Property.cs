@@ -1,4 +1,4 @@
-﻿namespace Rinha2024.VirtualDb.Types;
+﻿namespace Capivara.Backend.Types;
 
 public class Property(byte[] buffer, int size, int start, KeyValuePair<string, Type> metadata)
 {
