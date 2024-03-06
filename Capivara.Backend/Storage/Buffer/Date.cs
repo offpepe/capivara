@@ -1,4 +1,4 @@
-﻿namespace Rinha2024.VirtualDb.buffer;
+﻿namespace Capivara.Backend.Storage.Buffer;
 
 public static class Date
 {

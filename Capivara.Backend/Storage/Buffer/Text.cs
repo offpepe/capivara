@@ -1,8 +1,9 @@
 ﻿using System.Text;
+
 // ReSharper disable ForCanBeConvertedToForeach 
 // not using stateMachine
 
-namespace Rinha2024.VirtualDb.buffer;
+namespace Capivara.Backend.Storage.Buffer;
 
 public static class Text
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace Rinha2024.VirtualDb.buffer;
+namespace Capivara.Backend.Storage.Buffer;
 
 public static class Numeric
 {
@@ -156,11 +156,11 @@ public static class Numeric
         }
     }
 
-    private static byte[] ToByteArray(this decimal value)
+    public static byte[] ToByteArray(this decimal value)
     {
         var bits = decimal.GetBits(value);
         var byteArray = new byte[bits.Length * sizeof(int)];
-        Buffer.BlockCopy(bits, 0, byteArray, 0, byteArray.Length);
+        System.Buffer.BlockCopy(bits, 0, byteArray, 0, byteArray.Length);
         return byteArray;
     }
 

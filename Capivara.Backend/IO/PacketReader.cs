@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
 using System.Text;
 
-namespace Rinha2024.VirtualDb.IO;
+namespace Capivara.Backend.IO;
 
 public static class PacketReader
 {

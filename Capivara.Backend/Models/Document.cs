@@ -1,11 +1,12 @@
-﻿using Rinha2024.VirtualDb.Interfaces.Types;
-using Rinha2024.VirtualDb.Types;
+﻿using Capivara.Backend.Interfaces.Types;
+using Capivara.Backend.Types;
 
-namespace Rinha2024.VirtualDb.Models;
+namespace Capivara.Backend.Models;
 
-public class Document(Serial id, KeyValuePair<string, Property>[] properties)
+public class Document(Serial id, Property[] properties, int documentsize, int metadataSize)
 {
     public ISerial Id { get; init; } = id;
-    public KeyValuePair<string, Property>[] PropertiesBuffer { get; set; } = properties; 
-    public Guid[] Relations { get; init; } = [];
+    public Property[] Properties { get; set; } = properties;
+    public int DocumentSize { get; set; } = documentsize;
+    public int MetadataSize { get; set; } = metadataSize;
 }

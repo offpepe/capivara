@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace Rinha2024.VirtualDb.Extensions;
+namespace Capivara.Backend.Extensions;
 
 public static class GuidExtensions
 {
