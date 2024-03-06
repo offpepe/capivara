@@ -2,7 +2,6 @@
 using Capivara.Backend.Storage.Buffer;
 using Capivara.Backend.Storage.Utils;
 using Capivara.Backend.Types;
-using Fs = System.IO.File;
 
 namespace Capivara.Backend.Storage.File;
 
@@ -22,7 +21,7 @@ public class DocumentFs
             metadata.WriteText(name, ref position);
         }
         var path = Path.Join(Constants.StorageFolder, schema, docName);
-        VerifyDocumentDirectory(path);
+        Utils.CreateDirectoryIfNotExists(path);
         path = Path.Join(path, "meta.capv");
         using var stream = Fs.Create(path);
         stream.Write(metadata);
@@ -38,7 +37,7 @@ public class DocumentFs
             buffer.Write(prop.Buffer, ref position);
         }
         var path = Path.Join(Constants.StorageFolder, schema, docName);
-        VerifyDocumentDirectory(path);
+        Utils.CreateDirectoryIfNotExists(path);
         path = Path.Join(path, "content.capv");
         using var stream = Fs.Create(path);
         stream.Write(buffer);
@@ -71,9 +70,5 @@ public class DocumentFs
     }
     
 
-    private static void VerifyDocumentDirectory(string path)
-    {
-        if (Directory.Exists(path)) return;
-        Directory.CreateDirectory(path);
-    }
+    
 }

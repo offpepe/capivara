@@ -1,4 +1,7 @@
-﻿namespace Capivara.Backend.Extensions;
+﻿using Capivara.Backend.Interfaces.Types;
+using Capivara.Backend.Types;
+
+namespace Capivara.Backend.Extensions;
 
 public static class ArrayExtension
 {
@@ -15,4 +18,20 @@ public static class ArrayExtension
         transactions[2] = transactions[1];
         transactions[0] = transaction;
     }
+
+    public static Ordered<T>[] ConvertIntoOrdered<T>(this T[] array) where T : ISerial
+    {
+        var result = new Ordered<T>[array.Length];
+        Ordered<T>? last = default;
+        for (var i = 0; i < array.Length; i++)
+        {
+            var actual = new Ordered<T>(array[i], last, default);
+            if (last != null) last.Next = actual;
+            last = actual;
+            result[i] = actual;
+        }
+        return result;
+    }
+    
+    
 }
